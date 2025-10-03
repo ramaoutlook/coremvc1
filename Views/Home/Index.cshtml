@@ -1,8 +1,47 @@
-﻿@{
-    ViewData["Title"] = "Home Page";
+﻿@model coremvc.Models.Product
+@{
+    ViewData["TITlE"] = "Home Page";
+    string? x = ViewData["dd"] as string;
+    string? rev_sen = ViewData["rev_sen"] as string;    
+    bool? pal = ViewData["pal"] as bool?;
+    string? first_repeat = ViewData["first_rep"] as string;
 }
 
 <div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://learn.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+    <h1 class="display-4">Om Shanti Bapdada</h1>
+    <h3>First .Net Core Project</h3>
+    <h3>@ViewData["TITLe"]</h3>
+    <h3>@ViewData["ReV_SEn"]</h3>
+    
+    @* <div class="text-center">
+        <font size="20">
+            <h1>Product Details</h1>
+            <h3>Product ID: @Model.prodId</h3>
+            <h3>Product Product Name: @Model.prodName</h3>
+            <h3>Product Product Price: @Model.prodPrice</h3>
+            <h3>Product Qty: @Model.prodQty</h3>
+        </font>
+    </div> *@
+
+    @* <div class="text-center">
+        <h1>Student Details</h1>
+        <h3>Roll No: @Model.roll</h3>
+        <h3>Age: @Model.age</h3>
+        <h3>Name: @Model.name</h3>
+        <h3>Course: @Model.course</h3>
+        <h3>Fee: @Model.fee</h3>
+        <h3>Gender: @Model.gender</h3>
+
+    </div> *@
+
+    @* <h5>@x</h5>
+    <h5>@rev_sen</h5>
+    <h5>@pal</h5>
+    <h5>First Non Repeat Letter is : @first_repeat</h5> *@
+    
+    <p>Show Students <a href="/Home/ShowStudents">Show All student details</a></p>
+    <p><a href="/AddnlArea/Rapidi/Index">ScaffoldingTutorialForm</a></p>
+    <div class="text-center">
+        <a href="/Home/MyForm">Click here to fill Form</a>
+    </div>
 </div>

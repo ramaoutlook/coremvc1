@@ -1,0 +1,28 @@
+﻿@model IEnumerable<coremvc.Models.Student>
+
+    <h1>Student Details</h1>
+    <hr />
+    <div class="container">
+    @{
+        <div class="row text fw-bold text-lg-start">
+            <div class="col-lg-2">Roll No </div>
+            <div class="col-lg-2">Name </div>
+            <div class="col-lg-2">Gender </div>
+            <div class="col-lg-2">Course </div>
+            <div class="col-lg-2">Age </div>
+            <div class="col-lg-2">Fee </div>
+        </div>
+        <hr />
+        foreach(var item in Model)
+        {
+            <div class="row">                
+                <div class="col-lg-2">@item.roll</div>
+                <div class="col-lg-2">@item.name</div>
+                <div class="col-lg-2">@item.gender</div>
+                <div class="col-lg-2">@item.course</div>
+                <div class="col-lg-2">@item.age</div>
+                <div class="col-lg-2">@item.fee</div>
+            </div>
+        }
+        }
+    </div>

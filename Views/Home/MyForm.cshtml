@@ -1,0 +1,131 @@
+﻿@{
+    List<string> crs = new List<string>();
+    crs.Add("BCA");
+    crs.Add("MPC");
+    crs.Add("BPC");
+    crs.Add("CEC");
+}
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-lg-4 col-sm-12 col-md-6">
+            @using(Html.BeginForm("ShowData", "Home"))
+            {
+                <div>
+                    @Html.Label("nm", "Enter Your Name", new{@class="form-label"})
+                </div>
+                <div>
+                    @Html.TextBox("nm", "Name", new{@class="form-control"})
+                </div>
+                <div>
+                    @Html.Label("fn", "Enter Your Father Name", new{@class="form-label"})
+                </div>
+                <div>
+                    @Html.TextBox("fn", "", new {@class = "form-Control"})
+                </div>
+                <div>
+                    @Html.Label("pass", "Enter Password", new{@class="form-label"})
+                </div>
+                <div>
+                    @Html.Password("pass", "", new {@class = "form-Control"})
+                </div>
+                <div>
+                    @Html.Label("rpass", "Re-Type Password", new{@class="form-label"})
+                </div>
+                <div>
+                    @Html.Password("rpass", "", new {@class = "form-Control"})
+                </div>
+                <div>
+                    @Html.Label("gen", "Select Gender", new{@class="form-label"})
+                </div>
+                <div>
+                    @Html.RadioButton("gen", "Male", true, new {@id = "male"})Male
+                    @Html.RadioButton("gen", "Female", false, new {@id = "female"})Female
+                    @Html.RadioButton("gen", "Other", false, new {@id = "other"})Other
+                </div>
+                
+                <div>
+                    @Html.Label("course", "Select Course", new { @class = "form-label" })
+                </div>
+                <div>
+                    @Html.DropDownList("course", new SelectList(crs),"Select Course")
+                </div>
+                
+                <div>
+                    @Html.Label("address", "Enter Address", new { @class = "form-label" })
+                </div>
+                <div>
+                    @Html.TextArea("address", "", new {@class="form-control"})
+                </div>
+                <br />
+                
+                <div>
+                    @Html.Label("hobbies", "Select Hobbies", new { @class = "form-label" })
+                </div>
+                <div>
+                    @Html.CheckBox("Cric", false) Cricket
+                    @Html.CheckBox("Ches", false) Ches
+                    @Html.CheckBox("Swim", false) Swim
+                    @Html.CheckBox("Read", false) Reading
+                    @Html.CheckBox("Writ", false) Writing
+
+                </div>
+                <br />
+                <div>
+                    <input type="submit" class="btn btn-success" value="Register" />
+                    <input type="reset" class="btn btn-danger" value="Clear" />
+                </div>
+                <br />
+                <div>
+                    @Html.ActionLink("Click here to Login", "Login", "Home")
+                </div>
+            }
+        </div>
+    </div>
+</div>
+@* @using(Html.BeginForm("Validate", "Home"))
+{
+    @Html.Label("lblun", "Enter User Id", new {@class = "form-control"})
+    @Html.TextBox("username", "Enter User Name", new { @class = "form-control" })
+    <br />
+    @Html.Label("lblpass", "Enter Password", new { @class = "form-control" })
+    @Html.Password("pass", new { @class = "form-control" })
+    <br />
+    <input type="submit" value="Submit" />
+} *@
+
+
+@* <form name="fr" action="/Home/ShowDataIFormCollection" method="post">
+    <div>
+        <label>Enter Student ID</label>
+    </div>
+    <div>
+        <input type="text" name="sid" />
+    </div>
+    <div>
+        <label>Enter Your Name</label>
+    </div>
+    <div>
+        <input type="text" name="nm" />
+    </div>
+    <div>
+        <label>Enter Your Gender</label>
+    </div>
+    <div>
+        <select name="sgen">
+            <option value="Male">M</option>
+            <option value="FeMale">F</option>
+        </select>
+    </div>
+    <div>
+        <label>Enter Your Age</label>
+    </div>
+    <div>
+        <input type="text" name="age" />
+    </div>
+
+    <div>
+        <input type="submit" value="Send Data" />
+    </div>
+
+</form> *@
+
